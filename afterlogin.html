@@ -1,0 +1,91 @@
+<html>
+<head><title>after login main page</title>
+<style type="text/css">
+#my_centered_buttons { display: flex; justify-content: center; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript">
+function b1click(){
+location.href='./class10.html';
+};
+function b2click(){
+location.href='./class9.html';
+};
+function b3click(){
+location.href='./class8.html';
+};
+function b4click(){
+location.href='./class7.html';
+};
+function b5click(){
+location.href='./class6.html';
+};
+    $(document).ready(function(){
+console.log(document.cookie);
+var p=document.cookie;
+   $('#b6').click(function(){
+var e='';
+var f='';
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/adminemail",
+            type:"GET",
+         success: function(data){
+              e=data;
+              console.log('this is admin'+e);
+$.ajax({
+           url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/requestemail?t="+p,
+           type:"GET",
+        success: function(data){
+             f=data;
+             console.log('this is request'+f);
+if(e==f)
+{location.href='./admin.html';
+}
+else
+{
+location.href='./error.html';
+}
+},
+       error:function(){
+             console.log('error');}
+    })},
+         error:function(){
+               console.log('error');}
+    })
+    });      });
+
+</script>
+</head>
+<body>
+<br>
+<br>
+<hr>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+<button id="b1" onclick="b1click()">CLASS 10</button>
+</div>
+<br>
+<br>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+<button id="b2" onclick="b2click()" >CLASS 9</button>
+</div><br>
+<br>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+<button id="b3" onclick="b3click()">CLASS 8</button>
+</div><br>
+<br>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+<button id="b4" onclick="b4click()">CLASS 7</button>
+</div>
+<br>
+<br>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+<button id="b5" onclick="b5click()">CLASS 6</button>
+</div>
+<br>
+<br>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my_centered_buttons">
+<button id="b6">CHANGE FACTS</button>
+</div>
+</body>
+</html>

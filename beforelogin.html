@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Login page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type='text/javascript'>
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+console.log('ID: ' + profile.getId()); 
+ console.log('Name: ' + profile.getName());
+ console.log('Image URL: ' + profile.getImageUrl());
+ console.log('Email: ' + profile.getEmail()); 
+email1=profile.getEmail();
+document.cookie=email1;
+console.log(document.cookie);
+ var token=googleUser.getAuthResponse().id_token;
+console.log('ID_token'+token);
+console.log('entered in function');
+      $.ajax({
+    url : "https://us-central1-interactive-learning-554e5.cloudfunctions.net/signUp?email1="+email1,
+    type : "GET",
+    success : function() {
+     console.log('success')
+    },
+error:function(err){
+console.log(err);}
+  })
+console.log('visited');
+location.href='./afterlogin.html';
+};
+</script>
+<meta name="google-signin-client_id" content="950805472711-vgmgo37g9g81dj0f4nv1m1rretcb4v69.apps.googleusercontent.com">
+</head>
+<body>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+</body>
+</html>

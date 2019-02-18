@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Mathematics 7</title>
+<style type="text/css">
+#my1 { display: flex; justify-content: center; }
+#my2 { display: flex; justify-content: center; }
+#my3 { display: flex; justify-content: center; }
+#my4 { display: flex; justify-content: center; }
+#my5 { display: flex; justify-content: center; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#b1').click(function(){
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getf1m7",
+            type:"GET",
+           dataType: 'json',
+         success: function(data){
+          e=JSON.stringify(data)
+          console.log('this is data get'+e);
+         $.ajax({
+                     url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getexact?t="+e,
+                     type:"GET",
+                     success: function(data){
+                           f=data;
+                          console.log('this is exact'+f);
+document.getElementById("my1").innerHTML=f;
+                      },
+                     error:function(){
+                          console.log("error");
+                       }
+                });
+         },
+            error:function(){
+           console.log("error");
+            }
+      });
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getf2m7",
+            type:"GET",
+           dataType: 'json',
+         success: function(data){
+          e=JSON.stringify(data)
+          console.log('this is data get'+e);
+         $.ajax({
+                     url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getexact?t="+e,
+                     type:"GET",
+                     success: function(data){
+                           f=data;
+                          console.log('this is exact'+f);
+document.getElementById("my2").innerHTML=f;
+                      },
+                     error:function(){
+                          console.log("error");
+                       }
+                });
+         },
+            error:function(){
+           console.log("error");
+            }
+      });
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getf3m7",
+            type:"GET",
+           dataType: 'json',
+         success: function(data){
+          e=JSON.stringify(data)
+          console.log('this is data get'+e);
+         $.ajax({
+                     url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getexact?t="+e,
+                     type:"GET",
+                     success: function(data){
+                           f=data;
+                          console.log('this is exact'+f);
+document.getElementById("my3").innerHTML=f;
+                      },
+                     error:function(){
+                          console.log("error");
+                       }
+                });
+         },
+            error:function(){
+           console.log("error");
+            }
+      });
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getf4m7",
+            type:"GET",
+           dataType: 'json',
+         success: function(data){
+          e=JSON.stringify(data)
+          console.log('this is data get'+e);
+         $.ajax({
+                     url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getexact?t="+e,
+                     type:"GET",
+                     success: function(data){
+                           f=data;
+                          console.log('this is exact'+f);
+document.getElementById("my4").innerHTML=f;
+                      },
+                     error:function(){
+                          console.log("error");
+                       }
+                });
+         },
+            error:function(){
+           console.log("error");
+            }
+      });
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getf5m7",
+            type:"GET",
+           dataType: 'json',
+         success: function(data){
+          e=JSON.stringify(data)
+          console.log('this is data get'+e);
+         $.ajax({
+                     url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getexact?t="+e,
+                     type:"GET",
+                     success: function(data){
+                           f=data;
+                          console.log('this is exact'+f);
+document.getElementById("my5").innerHTML=f;
+                      },
+                     error:function(){
+                          console.log("error");
+                       }
+                });
+         },
+            error:function(){
+           console.log("error");
+            }
+      });
+});
+$('#b2').click(function(){
+var f=document.cookie;
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/likem7?t="+f,
+            type:"GET",
+
+         success: function(){
+          console.log('success');
+             },
+          error:function(){
+           console.log('error');}
+      });
+$.ajax({
+            url:"https://us-central1-interactive-learning-554e5.cloudfunctions.net/api/getlikem7",
+            type:"GET",
+           success: function(data){
+          document.getElementById("my6").innerHTML=data;
+             },
+          error:function(){
+           console.log('error');}
+      });
+   });
+});
+</script>
+</head>
+<body>
+<button id="b1" >get facts</button>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my1">
+</div>
+<hr>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my2">
+</div>
+<hr>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my3">
+</div>
+<hr>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my4">
+</div>
+<hr>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my5">
+</div>
+<hr>
+TO LIKE CLICK ON THIS BUTTON
+<button id="b2" >LIKE</button>
+<br>
+TOTAL LIKES:
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="my6">
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+document.cookie;
+location.href = "./afterlogin.html"
+G_AUTHUSER_H=0; artijangra28@gmail.com
+<script> console.log(document.cookie);</script>
+
+{
+    "-LUOwkv9eCKkooHLDMTO": "this is f1"
+}
